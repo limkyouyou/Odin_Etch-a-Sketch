@@ -35,12 +35,11 @@ function generateGrid(eachSide) {
   gridContainer.appendChild(gridItem);  
   }
   items = document.querySelectorAll('.grid-item');
-  items.forEach(item => item.addEventListener('mouseover', color));
+  items.forEach(item => item.addEventListener('mouseover', color, {once : true}));
 }
 
 function color(e) {
   e.target.style.cssText = (`background-color: ${randomRGB()};`);
-  console.log(e.target);
 }
 
 function randomRGB() {
