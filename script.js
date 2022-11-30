@@ -1,2 +1,4 @@
 const gridContainer = document.querySelector('#grid-container');
-console.log(gridContainer);
+const gridItem = document.createElement('div');
+gridItem.setAttribute('id', '.grid-item');
+
