@@ -25,8 +25,6 @@ function promptHowMany() {
   } else {
     alert("That's not a number!")
   }
-  console.log(typeof eachSideSquares)
-  console.log(eachSideSquares)
 }
 
 function generateGrid(eachSide) {
@@ -41,5 +39,13 @@ function generateGrid(eachSide) {
 }
 
 function color(e) {
-  e.target.style.cssText = (`background-color: black;`);
+  e.target.style.cssText = (`background-color: ${randomRGB()};`);
+  console.log(e.target);
+}
+
+function randomRGB() {
+  let f = Math.floor;
+  let r = Math.random;
+  let m = 256;
+  return `rgb(${f(r()*m)}, ${f(r()*m)}, ${f(r()*m)})`
 }
