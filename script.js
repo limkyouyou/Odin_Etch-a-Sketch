@@ -1,4 +1,14 @@
 const gridContainer = document.querySelector('#grid-container');
+const btnContainer = document.querySelector('#btn-container');
+const ttlSquareBtn = document.createElement('button');
+
+ttlSquareBtn.setAttribute('id', 'ttl-square-btn');
+ttlSquareBtn.textContent = "Number of squares"
+btnContainer.appendChild(ttlSquareBtn);
+
+
+
+
 
 
 for (let i = 0; i < 256; i++) {
