@@ -12,9 +12,21 @@ ttlSquareBtn.addEventListener('click', promptHowMany);
 generateGrid(eachSideSquares);
 
 function promptHowMany() {
-  eachSideSquares = +(prompt("From 1 to 100, type-in how many squares you'd like per side"));
-  items.forEach(item => gridContainer.removeChild(item));
-  generateGrid(eachSideSquares);
+  eachSideSquares = prompt("From 1 to 100, type-in how many squares you'd like per side");
+  if (eachSideSquares >= 1 && eachSideSquares <= 100) {
+    items.forEach(item => gridContainer.removeChild(item));
+    generateGrid(eachSideSquares);
+  } else if (eachSideSquares === null) {
+    return;
+  } else if (eachSideSquares > 100) {
+    alert("That's too many squares!");
+  } else if (eachSideSquares === 0) {
+    alert("There's not enough squares!");
+  } else {
+    alert("That's not a number!")
+  }
+  console.log(typeof eachSideSquares)
+  console.log(eachSideSquares)
 }
 
 function generateGrid(eachSide) {
