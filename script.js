@@ -6,9 +6,12 @@ ttlSquareBtn.setAttribute('id', 'ttl-square-btn');
 ttlSquareBtn.textContent = "Number of squares"
 btnContainer.appendChild(ttlSquareBtn);
 
+ttlSquareBtn.addEventListener('click', promptHowMany);
 
-
-
+function promptHowMany() {
+  const squareNumbers = prompt("From 0 to 100, type-in how many squares you'd like per side")
+  return squareNumbers;
+}
 
 
 for (let i = 0; i < 256; i++) {
