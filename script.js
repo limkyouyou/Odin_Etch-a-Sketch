@@ -1,8 +1,11 @@
 const gridContainer = document.querySelector('#grid-container');
-const gridItem = document.createElement('div');
 
-gridItem.setAttribute('id', '.grid-item');
 
-gridContainer.style.cssText = ('width: 1000px; height: 1000px; background-color: gray;');
-gridItem.style.cssText = ('background-color: white;');
 
+
+for (let i = 0; i < 256; i++) {
+  gridContainer.style.cssText = (`grid-template-columns: repeat(16, auto);`);
+  const gridItem = document.createElement('div');
+  gridItem.classList.add('grid-item');
+  gridContainer.appendChild(gridItem);
+};

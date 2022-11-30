@@ -1,0 +1,12 @@
+#grid-container {
+  display: grid;
+  gap: 1px;
+  width: 800px;
+  height: 800px;
+  background-color: gray;
+}
+
+.grid-item {
+  background-color: white;
+  border: 1px solid black;
+}
