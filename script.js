@@ -40,8 +40,10 @@ function generateGrid(eachSide) {
 }
 
 function color(e) {
+  let hover = +(e.target.dataset.passed);
+  hover += 1;
+  e.target.setAttribute('data-passed', hover);
   e.target.style.cssText = (`background-color: ${randomRGB()};`);
-  console.log(e.target.getAttribute('data-passed'));
 }
 
 function randomRGB() {
