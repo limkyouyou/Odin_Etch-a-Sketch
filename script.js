@@ -54,9 +54,9 @@ function color(e) {
   e.target.dataset.passed = hover;
 }
 
-function getRandomRGB() {
-  let f = Math.floor;
-  let r = Math.random;
+function getRandomRGB() { 
+  const f = Math.floor;
+  const r = Math.random;
   const m = 256;
   return `${f(r()*m)}, ${f(r()*m)}, ${f(r()*m)}`
 }
