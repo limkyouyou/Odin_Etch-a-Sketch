@@ -57,7 +57,7 @@ function color(e) {
 function getRandomRGB() {
   let f = Math.floor;
   let r = Math.random;
-  let m = 256;
+  const m = 256;
   return `${f(r()*m)}, ${f(r()*m)}, ${f(r()*m)}`
 }
 
