@@ -62,9 +62,9 @@ function randomRGB() {
 }
 
 function darker(rgb, passed) {
-  let newRGB = rgb.split(', ');
-  for (let i = 0; i < newRGB.length; i++) {
-    newRGB[i] -= Math.floor(((newRGB[i] / 10) * passed));
+  let newRGB = [];
+  for (const x of rgb.split(', ')) {
+    newRGB.push(x - Math.floor((x / 10) * passed));
   }
   return newRGB.join(', ');
 }
