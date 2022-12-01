@@ -32,14 +32,16 @@ function generateGrid(eachSide) {
   gridContainer.style.cssText = (`grid-template-columns: repeat(${eachSide}, auto);`);
   const gridItem = document.createElement('div');
   gridItem.classList.add('grid-item');
+  gridItem.setAttribute('data-passed', 0);
   gridContainer.appendChild(gridItem);  
   }
   items = document.querySelectorAll('.grid-item');
-  items.forEach(item => item.addEventListener('mouseover', color, {once : true}));
+  items.forEach(item => item.addEventListener('mouseover', color));
 }
 
 function color(e) {
   e.target.style.cssText = (`background-color: ${randomRGB()};`);
+  console.log(e.target.getAttribute('data-passed'));
 }
 
 function randomRGB() {
