@@ -28,8 +28,8 @@ function promptHowMany() {
 }
 
 function generateGrid(eachSide) {
+  gridContainer.style.cssText = (`grid-template-columns: repeat(${eachSide}, auto);`);
   for (let i = 0; i < (eachSide * eachSide); i++) {
-    gridContainer.style.cssText = (`grid-template-columns: repeat(${eachSide}, auto);`);
     const gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
     gridItem.setAttribute('data-passed', 0);
