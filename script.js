@@ -41,16 +41,17 @@ function generateGrid(eachSide) {
 
 function color(e) {
   let hover = +(e.target.dataset.passed);
+
   if (hover === 0) {
-    hover += 1;
     let color = randomRGB();
     e.target.setAttribute('data-color', color);
-    e.target.style.cssText = (`background-color: rgb(${color});`);
+    e.target.style.backgroundColor = `rgb(${color})`;
+    hover += 1;
+  } else if (hover > 0 && hover <= 10) {
+    e.target.style.backgroundColor = `rgb(${darker(e.target.dataset.color, hover)})`;
+    hover += 1;
   } 
-
-  
-  e.target.setAttribute('data-passed', hover);
-  console.log(e.target.dataset.color)
+  e.target.dataset.passed = hover;
 }
 
 function randomRGB() {
@@ -58,4 +59,12 @@ function randomRGB() {
   let r = Math.random;
   let m = 256;
   return `${f(r()*m)}, ${f(r()*m)}, ${f(r()*m)}`
+}
+
+function darker(rgb, passed) {
+  let newRGB = rgb.split(', ');
+  for (let i = 0; i < newRGB.length; i++) {
+    newRGB[i] -= Math.floor(((newRGB[i] / 10) * passed));
+  }
+  return newRGB.join(', ');
 }
