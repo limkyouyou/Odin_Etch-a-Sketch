@@ -29,11 +29,11 @@ function promptHowMany() {
 
 function generateGrid(eachSide) {
   for (let i = 0; i < (eachSide * eachSide); i++) {
-  gridContainer.style.cssText = (`grid-template-columns: repeat(${eachSide}, auto);`);
-  const gridItem = document.createElement('div');
-  gridItem.classList.add('grid-item');
-  gridItem.setAttribute('data-passed', 0);
-  gridContainer.appendChild(gridItem);  
+    gridContainer.style.cssText = (`grid-template-columns: repeat(${eachSide}, auto);`);
+    const gridItem = document.createElement('div');
+    gridItem.classList.add('grid-item');
+    gridItem.setAttribute('data-passed', 0);
+    gridContainer.appendChild(gridItem);  
   }
   items = document.querySelectorAll('.grid-item');
   items.forEach(item => item.addEventListener('mouseover', color));
@@ -43,7 +43,7 @@ function color(e) {
   let hover = +(e.target.dataset.passed);
 
   if (hover === 0) {
-    let color = randomRGB();
+    let color = getRandomRGB();
     e.target.setAttribute('data-color', color);
     e.target.style.backgroundColor = `rgb(${color})`;
     hover += 1;
@@ -54,7 +54,7 @@ function color(e) {
   e.target.dataset.passed = hover;
 }
 
-function randomRGB() {
+function getRandomRGB() {
   let f = Math.floor;
   let r = Math.random;
   let m = 256;
