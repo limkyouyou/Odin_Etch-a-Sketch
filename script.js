@@ -43,7 +43,7 @@ function color(e) {
   let hover = +(e.target.dataset.passed);
 
   if (hover === 0) {
-    let color = getRandomRGB();
+    const color = getRandomRGB();
     e.target.setAttribute('data-color', color);
     e.target.style.backgroundColor = `rgb(${color})`;
     hover += 1;
